@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { User } from './models/user.model';
 import { DataService } from './service/data.service';
 
+
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,9 +13,11 @@ import { DataService } from './service/data.service';
 export class AppComponent implements  OnInit{
   users$: User[];
   
-  constructor(private dataService: DataService){}
+  constructor(private DataService: DataService){
+
+  }
  
   ngOnInit() {
-    return this.dataService.getUsers().subscribe(data => this.users$ = data);
+    return this.DataService.getUsers().subscribe(data => this.users$ = data);
   }
 }

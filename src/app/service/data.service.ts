@@ -7,8 +7,9 @@ import { User } from '../models/user.model';
 })
 export class DataService {
   apiUrl = 'https://jsonplaceholder.typicode.com/users';
+  
   constructor(private http: HttpClient) { }
-
+  
   getUsers(){
     return this.http.get<User[]>(this.apiUrl);
   }
