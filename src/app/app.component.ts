@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from './models/user.model';
 import { DataService } from './service/data.service';
+import { Product } from './models/product.model';
 
 
 
@@ -11,13 +11,12 @@ import { DataService } from './service/data.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements  OnInit{
-  users$: User[];
   
-  constructor(private DataService: DataService){
+  constructor(){
 
   }
  
   ngOnInit() {
-    return this.DataService.getUsers().subscribe(data => this.users$ = data);
+
   }
 }

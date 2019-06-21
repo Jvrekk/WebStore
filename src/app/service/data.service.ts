@@ -1,16 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../models/user.model';
+import { Product, ChartProduct } from '../models/product.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  apiUrl = 'https://jsonplaceholder.typicode.com/users';
-  
+  apiUrl = 'http://99.80.4.149:8080/';
+  chartProducts: ChartProduct[] = [];
   constructor(private http: HttpClient) { }
   
-  getUsers(){
-    return this.http.get<User[]>(this.apiUrl);
+  getProducts(){
+    return this.http.get<Product[]>(this.apiUrl+"products/");
   }
+
+  updateChart(chart:ChartProduct[]){
+    this.chartProducts = chart;
+  }
+  getCartProducts(){
+    return this.chartProducts;
+  }
+
 }
