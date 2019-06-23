@@ -3,6 +3,7 @@
     <tr>
       <th scope="col">Product</th>
       <th scope="col">Price</th>
+      <th scope="col">Avaible</th>
       <th scope="col">Amount</th>
       <th scope="col"></th>
     </tr>
@@ -11,6 +12,7 @@
     <tr *ngFor="let item of cartProducts">
       <td>{{item.name}}</td>
       <td>{{item.price}}</td>
+      <td>{{item.inStock}}</td>
       <td>{{item.amount}}</td>
       <td style="text-align: center"><button type="button" class="btn btn-danger" (click)="remove(item.id)">remove</button></td>
     </tr>

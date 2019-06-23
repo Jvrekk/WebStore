@@ -13,6 +13,9 @@ export class DataService {
   getProducts(){
     return this.http.get<Product[]>(this.apiUrl+"products/");
   }
+  getProduct(id){
+    return this.http.get<Product>(this.apiUrl+"products/"+id);
+  }
 
   updateChart(chart:ChartProduct[]){
     this.chartProducts = chart;

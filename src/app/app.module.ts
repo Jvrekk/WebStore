@@ -11,6 +11,10 @@ import { CartComponent } from './pages/cart/cart.component';
 import { ItemListComponent } from './pages/item-list/item-list.component';
 import { OrderComponent } from './pages/order/order.component';
 import { ItemComponent } from './pages/item/item.component';
+import { FormsModule }   from '@angular/forms';
+import { UserOrderComponent } from './components/user-order/user-order.component';
+import { DeliveryComponent } from './components/delivery/delivery.component';
+
 
 
 
@@ -23,11 +27,14 @@ import { ItemComponent } from './pages/item/item.component';
     ItemListComponent,
     OrderComponent,
     ItemComponent,
+    UserOrderComponent,
+    DeliveryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
 
   ],
   providers: [ DataService ],
